@@ -10,13 +10,7 @@ import noteRouter from "./src/modules/notes/routes/note-routes.js";
 const app = express();
 dotenv.config();
 //middleware
-app.use(
-  cors({
-    origin: ["https://note-taking-app-client.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 //routes
