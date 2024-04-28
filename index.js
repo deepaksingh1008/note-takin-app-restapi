@@ -24,8 +24,8 @@ app.use(morgan("dev"));
 app.use("/api/v1", userRoutes);
 app.use("/api/v1/", noteRouter);
 //app listen
-
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
   // console.log(`Server is running on Port number ${process.env.PORT}`.bgMagenta);
   dbConnection();
 });
