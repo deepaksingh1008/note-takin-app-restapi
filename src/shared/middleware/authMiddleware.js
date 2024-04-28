@@ -11,11 +11,11 @@ export const requireSignIn = (req, res, next) => {
     if (!decode) {
       return res.status(401).send({ success: false, message: "Invalid token" });
     }
-    //  console.log(req.user);
+
     req.user = decode;
-    // console.log(req);
+
     next();
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };

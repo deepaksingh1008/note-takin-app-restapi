@@ -12,7 +12,7 @@ export const userServices = {
       if (!email) return { status: false, message: "Email is required" };
       if (!password) return { status: false, message: "Password is required" };
       let user = await userModel.findOne({ email: email });
-      console.log("User Data", user);
+
       if (user) return { status: false, message: "This Email already exists." };
       else {
         const hashedPassword = await hashPassword(password);

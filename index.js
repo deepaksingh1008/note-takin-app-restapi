@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import colors from "colors";
 import morgan from "morgan";
-import path from "path";
 
 import { dbConnection } from "./src/shared/db/connection.js";
 import userRoutes from "./src/modules/user/routes/user-routes.js";

@@ -36,7 +36,6 @@ export const NoteServices = {
     }
   },
   async updateNote(id, data) {
-    //   console.log("updateNote service : ", id);
     try {
       const updatedData = await noteModel.findByIdAndUpdate(id, {
         $set: { ...data, isUpdated: true },
@@ -54,7 +53,6 @@ export const NoteServices = {
       const notes = await noteModel.find(searchCriteria);
       return { success: true, notes };
     } catch (error) {
-      console.error(error);
       throw error;
     }
   },

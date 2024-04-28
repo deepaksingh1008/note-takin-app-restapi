@@ -51,8 +51,6 @@ export const updateNoteController = async (req, res) => {
 
 //searching
 export const searchByTitleController = async (req, res) => {
-  //console.log(req.query);
-  console.log(req.params.id);
   const title = req.query.title;
   try {
     const response = await NoteServices.searchNote(title, req.params.id);
@@ -67,7 +65,7 @@ export const searchByTitleController = async (req, res) => {
 //get single note
 export const getSingleNoteController = async (req, res) => {
   // const { id } = req.params;
-  console.log(req.params.id);
+
   try {
     const response = await NoteServices.getSingleNote(req.params.id);
     res.status(200).send(response);
