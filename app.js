@@ -16,9 +16,16 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1", userRoutes);
 app.use("/api/v1/", noteRouter);
-//app listen
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  // console.log(`Server is running on Port number ${process.env.PORT}`.bgMagenta);
-  dbConnection();
+app.get("*", (req, res, next) => {
+  res.status(200).json({
+    message: "bad request",
+  });
 });
+//app listen
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//   // console.log(`Server is running on Port number ${process.env.PORT}`.bgMagenta);
+//   dbConnection();
+// });
+dbConnection();
+export default app;
